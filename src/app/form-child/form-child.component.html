@@ -1,0 +1,9 @@
+<div [formGroup]="formGroupData">
+  {{ enabled }}
+  <div  *ngIf="enabled">
+    <input type="text" formControlName="FirstName" placeholder="First Name"/>
+    <br>
+    <input type="text" formControlName="LastName" placeholder="Last Name"/>
+    <input type="button" (click)="onSubmit()" value="Submit"/>
+  </div>
+</div>
