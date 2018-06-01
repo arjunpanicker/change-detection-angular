@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
   public firstName: string;
   public lastName: string;
 
+  slogan = 'Just movie information';
+  title = 'Terminator 1';
+  actor = new Actor('Arnold', 'Schwarzenegger');
   constructor (private fb: FormBuilder) {}
 
   ngOnInit() {
@@ -32,22 +35,19 @@ export class AppComponent implements OnInit {
     console.log('Enable', this.sampleForm.controls.Enable.value);
   }
 
-  private getData(event) {
+  public getData(event) {
     // this.sampleForm = <FormGroup>event;
     // console.log(event);
     this.firstName = event.get('FirstName').value;
     this.lastName = event.get('LastName').value;
   }
 
-  slogan = 'Just movie information';
-  title = 'Terminator 1';
-  actor = new Actor('Arnold', 'Schwarzenegger');
-  
+
   changeActorProperties(): void {
     this.actor.firstName = 'Nicholas';
     this.actor.lastName = 'Cage';
   }
-  
+
   changeActorObject(): void {
     this.actor = new Actor('Bruce', 'Willis');
   }
